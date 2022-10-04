@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:kp_project/BackEnd/Authentication/Auth.dart';
-import 'package:kp_project/FrontEnd/Screens/Login/login_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

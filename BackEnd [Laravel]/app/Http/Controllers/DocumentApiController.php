@@ -10,7 +10,7 @@ class DocumentApiController extends Controller
     public function index()
     {
         $documents = Document::getDocument();
-        return response()->json(['message' => 'Get Data Success', 'data' => $documents]);
+        return response()->json($documents);
     }
 
     public function store(Request $request)

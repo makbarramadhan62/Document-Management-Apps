@@ -7,18 +7,15 @@ import 'dart:ui' as ui;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:kp_project/BackEnd/API/CRUD.dart';
 import 'package:kp_project/FrontEnd/Screens/Home/home_screen.dart';
 import 'package:kp_project/FrontEnd/Components/AppBar.dart';
 import 'package:kp_project/utilities/colors.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:signature/signature.dart';
 import 'package:http/http.dart' as http;
-import 'package:image/image.dart' as img;
 
 class AddScreen extends StatefulWidget {
   @override
@@ -33,9 +30,6 @@ class _AddScreenState extends State<AddScreen> {
 
   String? _dt, _ds;
   String signature = 'unSigned';
-
-  String? _selectedcategory;
-  List categoryItemList = [];
 
   FilePickerResult? result;
   String? _fileName, _fileExtension, _filePath;
@@ -82,6 +76,9 @@ class _AddScreenState extends State<AddScreen> {
     exportBackgroundColor: kPrimaryClr,
   );
 
+  String? _selectedcategory;
+  List categoryItemList = [];
+
   Future getAllCategories() async {
     var url = "http://10.0.2.2:8000/api/categories";
     var response = await http.get(Uri.parse(url));
@@ -98,7 +95,7 @@ class _AddScreenState extends State<AddScreen> {
   void GetSeason() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     setState(() {
-      user_id = pref.getString("login");
+      user_id = pref.getString("login_id");
     });
   }
 
@@ -317,7 +314,7 @@ class _AddScreenState extends State<AddScreen> {
                                 onChanged: (value) {
                                   setState(() {
                                     _dt = value.toString();
-                                    signature = 'signed';
+                                    // signature = 'signed';
                                   });
                                 },
                                 activeColor: kMainTextClr,

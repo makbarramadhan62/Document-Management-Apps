@@ -1,17 +1,13 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:kp_project/BackEnd/API/CRUD.dart';
+import 'package:kp_project/FrontEnd/Models/document.dart';
+import 'package:kp_project/FrontEnd/Screens/EditDocument/edit_screen.dart';
 import 'package:kp_project/FrontEnd/Screens/Home/home_screen.dart';
 import 'package:kp_project/utilities/colors.dart';
-import 'package:http/http.dart' as http;
-
-import '../EditDocument/edit_screen.dart';
 
 class DetailScreen extends StatefulWidget {
-  final Map document;
-
-  DetailScreen({required this.document});
+  final Document document;
+  const DetailScreen({required this.document});
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
@@ -19,7 +15,6 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   bool tappedYes = false;
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -78,7 +73,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                     height: 10,
                                   ),
                                   Text(
-                                    widget.document['file_upload'],
+                                    widget.document.file_upload,
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                         fontSize: 16,
@@ -129,7 +124,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ),
                                 Text(
-                                  widget.document['username'],
+                                  widget.document.username,
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -153,7 +148,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ),
                                 Text(
-                                  widget.document['document_name'],
+                                  widget.document.document_name,
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -177,7 +172,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ),
                                 Text(
-                                  widget.document['organization_name'],
+                                  widget.document.organization_name,
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -201,7 +196,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ),
                                 Text(
-                                  widget.document['date'],
+                                  widget.document.date,
                                   style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
@@ -238,7 +233,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            if (widget.document['status_id'] == 1)
+                            if (widget.document.status_id == '1')
                               Row(
                                 children: const <Widget>[
                                   Icon(Icons.circle,
@@ -255,7 +250,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ],
                               ),
-                            if (widget.document['status_id'] == 2)
+                            if (widget.document.status_id == '2')
                               Row(
                                 children: const <Widget>[
                                   Icon(Icons.circle,
@@ -272,7 +267,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ],
                               ),
-                            if (widget.document['status_id'] == 3)
+                            if (widget.document.status_id == '3')
                               Row(
                                 children: const <Widget>[
                                   Icon(Icons.circle,
@@ -289,7 +284,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ],
                               ),
-                            if (widget.document['type_id'] == 1)
+                            if (widget.document.type_id == '1')
                               Row(
                                 children: const <Widget>[
                                   Icon(
@@ -309,7 +304,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ),
                                 ],
                               ),
-                            if (widget.document['type_id'] == 2)
+                            if (widget.document.type_id == '2')
                               Row(
                                 children: const <Widget>[
                                   Icon(
@@ -340,7 +335,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   width: 5,
                                 ),
                                 Text(
-                                  widget.document['category_name'],
+                                  widget.document.category_name,
                                   style: const TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
@@ -394,8 +389,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                         context, 'Delete', 'are you sure?');
                                 if (action == DialogsAction.yes) {
                                   setState(() => tappedYes = true);
-                                  deleteDocument(
-                                          widget.document['id'].toString())
+                                  deleteDocument(widget.document.id.toString())
                                       .then(
                                     (value) {
                                       setState(() {});

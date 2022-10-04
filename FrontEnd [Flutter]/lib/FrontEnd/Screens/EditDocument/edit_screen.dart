@@ -3,19 +3,18 @@
 import 'dart:convert';
 import 'dart:ffi';
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:kp_project/BackEnd/API/CRUD.dart';
+import 'package:kp_project/FrontEnd/Models/document.dart';
 import 'package:kp_project/FrontEnd/Screens/Home/home_screen.dart';
-import 'package:kp_project/FrontEnd/Screens/DetailDocument/detail_screen.dart';
 import 'package:kp_project/FrontEnd/Components/AppBar.dart';
 import 'package:kp_project/utilities/colors.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class EditScreen extends StatefulWidget {
-  final Map document;
+  final Document document;
 
   EditScreen({required this.document});
 
@@ -36,10 +35,10 @@ class _EditScreenState extends State<EditScreen> {
   TextEditingController _organizationnameController = TextEditingController();
   TextEditingController dateinputController = TextEditingController();
 
-  late String _dt = widget.document['type_id'].toString(),
-      _ds = widget.document['status_id'].toString();
+  late String _dt = widget.document.type_id.toString(),
+      _ds = widget.document.status_id.toString();
 
-  late String? _selectedcategory = widget.document['category_id'].toString();
+  late String? _selectedcategory = widget.document.category_id.toString();
   List categoryItemList = [];
 
   Future getAllCategories() async {
@@ -98,7 +97,7 @@ class _EditScreenState extends State<EditScreen> {
                         alignment: Alignment.center,
                         child: TextField(
                           controller: _documentnameController
-                            ..text = widget.document['document_name'],
+                            ..text = widget.document.document_name,
                           style: const TextStyle(color: kMainTextClr),
                           cursorColor: kMainTextClr,
                           decoration: const InputDecoration(
@@ -136,7 +135,7 @@ class _EditScreenState extends State<EditScreen> {
                         alignment: Alignment.center,
                         child: TextField(
                           controller: _organizationnameController
-                            ..text = widget.document['organization_name'],
+                            ..text = widget.document.organization_name,
                           style: const TextStyle(color: kMainTextClr),
                           cursorColor: kMainTextClr,
                           decoration: const InputDecoration(
@@ -177,7 +176,7 @@ class _EditScreenState extends State<EditScreen> {
                           controller: dateinputController,
                           decoration: InputDecoration(
                               icon: const Icon(Icons.calendar_month),
-                              hintText: widget.document['date'].toString(),
+                              hintText: widget.document.date.toString(),
                               hintStyle: const TextStyle(color: kMainTextClr),
                               enabledBorder: InputBorder.none,
                               focusedBorder: InputBorder.none),
@@ -395,7 +394,7 @@ class _EditScreenState extends State<EditScreen> {
                         color: kButtonClr,
                         onPressed: () {
                           updateDocument(
-                                  widget.document['id'],
+                                  widget.document.id,
                                   _documentnameController.text,
                                   _organizationnameController.text,
                                   dateinputController.text,

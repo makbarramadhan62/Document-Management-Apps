@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kp_project/BackEnd/API/CRUD.dart';
 import 'package:kp_project/BackEnd/Authentication/Auth.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../../utilities/colors.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -66,17 +62,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: TextFormField(
                       controller: emailController,
+                      style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: kSubTextIconClr),
                       decoration: const InputDecoration(
-                          icon: Icon(
-                            Icons.person,
-                            color: kButtonClr,
-                          ),
-                          hintText: "Your Email",
-                          hintStyle: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w600,
-                              color: kSubTextIconClr),
-                          border: InputBorder.none),
+                        icon: Icon(
+                          Icons.person,
+                          color: kButtonClr,
+                        ),
+                        hintText: "Your Email",
+                        hintStyle: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: kSubTextIconClr),
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -92,6 +93,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     child: TextFormField(
                       controller: passwordController,
+                      style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: kSubTextIconClr),
                       obscureText: isHidden,
                       decoration: InputDecoration(
                           icon: const Icon(

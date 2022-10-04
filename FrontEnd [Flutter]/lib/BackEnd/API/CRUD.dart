@@ -1,12 +1,34 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
+import 'package:kp_project/FrontEnd/Models/document.dart';
 
 const String url = 'http://10.0.2.2:8000/api/documents';
 
-Future getDocuments() async {
-  var response = await http.get(Uri.parse(url));
-  return json.decode(response.body);
+// Future getDocuments() async {
+//   var response = await http.get(Uri.parse(url));
+//   return json.decode(response.body);
+// }
+
+class Services {
+  static Future<List<Document>> getDocuments() async {
+    try {
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        List<Document> list = parseDocuments(response.body);
+        return list;
+      } else {
+        throw Exception("Error");
+      }
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
+  static List<Document> parseDocuments(String responseBody) {
+    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+    return parsed.map<Document>((json) => Document.fromJson(json)).toList();
+  }
 }
 
 Future saveDocument(documentName, organizationName, date, typeId, categoryId,
@@ -30,8 +52,10 @@ Future saveDocument(documentName, organizationName, date, typeId, categoryId,
           'signature', File(signature).readAsBytesSync(),
           filename: signature),
     );
-    // request.fields['signature'] = signature;
+  } else {
+    request.fields['signature'] = "unSigned";
   }
+
   request.fields['user_id'] = user_id;
 
   print(signature);
