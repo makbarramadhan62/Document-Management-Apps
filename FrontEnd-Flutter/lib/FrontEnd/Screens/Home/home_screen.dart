@@ -184,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Image(
                         width: 40,
                         height: 40,
-                        image: AssetImage('assets/images/profil1.png'),
+                        image: AssetImage('assets/images/profil.png'),
                         fit: BoxFit.cover),
                   )
                 ],
@@ -320,13 +320,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Text(
                                           searchDocuments[index].document_name,
                                           style: const TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 16,
                                             color: kMainTextClr,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 5,
                                         ),
                                         Text(
                                           searchDocuments[index]

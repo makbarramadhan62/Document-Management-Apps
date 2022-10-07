@@ -32,7 +32,6 @@ class DatabaseSeeder extends Seeder
             'username' => 'Akbar',
             'email' => 'makbarramadhan62@gmail.com',
             'title' => 'Anak Magang ITTS',
-            'gender' => '1',
             'phone_number' => '081349288331',
             'password' => bcrypt('akbar')
         ]);
@@ -42,7 +41,6 @@ class DatabaseSeeder extends Seeder
             'username' => 'Ranti',
             'email' => 'wirantimaharani281000@gmail.com',
             'title' => 'Anak Magang Telkom',
-            'gender' => '0',
             'phone_number' => '081349288833',
             'password' => bcrypt('ranti')
         ]);
@@ -84,7 +82,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Document::create([
-            'document_name' => 'Document Internship',
+            'document_name' => 'Permintaan Magang ITTS',
             'organization_name' => 'ITTelkom Surabaya',
             'date' => '10-10-2022',
             'type_id' => '1',
@@ -96,8 +94,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Document::create([
-            'document_name' => 'Document Project',
-            'organization_name' => 'UBAYA',
+            'document_name' => 'Keuangan Project A',
+            'organization_name' => 'PT. Otak Kanan',
             'date' => '04-10-2022',
             'type_id' => '2',
             'category_id' => '4',
@@ -105,6 +103,66 @@ class DatabaseSeeder extends Seeder
             'file_upload' => 'file2.pdf',
             'signature' => '',
             'user_id' => '2',
+        ]);
+
+        Document::create([
+            'document_name' => 'Internship Sekolah B',
+            'organization_name' => 'Sekolah B',
+            'date' => '04-10-2022',
+            'type_id' => '2',
+            'category_id' => '4',
+            'status_id' => '1',
+            'file_upload' => 'file2.pdf',
+            'signature' => '',
+            'user_id' => '1',
+        ]);
+
+        Document::create([
+            'document_name' => 'Permintaan Magang UB',
+            'organization_name' => 'Universitas Brawijaya',
+            'date' => '04-10-2022',
+            'type_id' => '2',
+            'category_id' => '4',
+            'status_id' => '1',
+            'file_upload' => 'file2.pdf',
+            'signature' => '',
+            'user_id' => '2',
+        ]);
+
+        Document::create([
+            'document_name' => 'Project Perusahaan Kantor A',
+            'organization_name' => 'PT. Kantor A',
+            'date' => '04-10-2022',
+            'type_id' => '2',
+            'category_id' => '4',
+            'status_id' => '1',
+            'file_upload' => 'file2.pdf',
+            'signature' => '',
+            'user_id' => '1',
+        ]);
+
+        Document::create([
+            'document_name' => 'Lamaran Kerjaan',
+            'organization_name' => 'Personal',
+            'date' => '04-10-2022',
+            'type_id' => '2',
+            'category_id' => '4',
+            'status_id' => '1',
+            'file_upload' => 'file2.pdf',
+            'signature' => '',
+            'user_id' => '2',
+        ]);
+
+        Document::create([
+            'document_name' => 'Permintaan Lamaran Kerjaan',
+            'organization_name' => 'Personal',
+            'date' => '04-10-2022',
+            'type_id' => '2',
+            'category_id' => '4',
+            'status_id' => '1',
+            'file_upload' => 'file2.pdf',
+            'signature' => '',
+            'user_id' => '1',
         ]);
     }
 }

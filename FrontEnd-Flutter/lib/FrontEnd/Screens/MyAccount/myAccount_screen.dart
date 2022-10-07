@@ -72,7 +72,7 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                     child: Image(
                         width: 180,
                         height: 180,
-                        image: AssetImage('assets/images/profil1.png'),
+                        image: AssetImage('assets/images/profil.png'),
                         fit: BoxFit.cover),
                   ),
                 ),
@@ -170,9 +170,9 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                       const Divider(
                         thickness: 1,
                       ),
-                      Text(
-                        token_phoneNumber!,
-                        style: const TextStyle(
+                      const Text(
+                        "Phone Number",
+                        style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             color: kButtonClr),
@@ -180,9 +180,9 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text(
-                        "081249288331",
-                        style: TextStyle(
+                      Text(
+                        token_phoneNumber!,
+                        style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                             color: kSubTextIconClr),

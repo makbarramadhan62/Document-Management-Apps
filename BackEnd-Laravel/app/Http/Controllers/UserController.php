@@ -37,13 +37,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')),
-            'api_token' => random_bytes(100)
-        ]);
+        // User::create([
+        //     'name' => $request->input('name'),
+        //     'email' => $request->input('email'),
+        //     'password' => bcrypt($request->input('password')),
+        //     'api_token' => random_bytes(100)
+        // ]);
 
+        $data = $request->all();
+        User::create($data);
         return redirect('/dashboard/users')->with('success', 'New User has been Added!');
     }
 

@@ -49,7 +49,7 @@ class _SideBarState extends State<SideBar> {
                 children: [
                   const CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage('assets/images/profil1.png'),
+                    backgroundImage: AssetImage('assets/images/profil.png'),
                   ),
                   const SizedBox(
                     height: 10,
@@ -82,19 +82,19 @@ class _SideBarState extends State<SideBar> {
                       );
                     },
                   ),
-                  const SizedBox(height: 16),
-                  buildMenuItem(
-                    text: 'History',
-                    icon: Icons.history,
-                    onClicked: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => ComingSoon(),
-                        ),
-                      );
-                    },
-                  ),
+                  // const SizedBox(height: 16),
+                  // buildMenuItem(
+                  //   text: 'History',
+                  //   icon: Icons.history,
+                  //   onClicked: () {
+                  //     Navigator.of(context).pop();
+                  //     Navigator.of(context).push(
+                  //       MaterialPageRoute(
+                  //         builder: (context) => ComingSoon(),
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Help',
@@ -113,19 +113,19 @@ class _SideBarState extends State<SideBar> {
                     thickness: 1,
                   ),
                   const SizedBox(height: 24),
-                  buildMenuItem(
-                    text: 'Settings',
-                    icon: Icons.settings,
-                    onClicked: () {
-                      Navigator.of(context).pop();
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => ComingSoon(),
-                        ),
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 16),
+                  // buildMenuItem(
+                  //   text: 'Settings',
+                  //   icon: Icons.settings,
+                  //   onClicked: () {
+                  //     Navigator.of(context).pop();
+                  //     Navigator.of(context).push(
+                  //       MaterialPageRoute(
+                  //         builder: (context) => ComingSoon(),
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
+                  // const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Logout',
                     icon: Icons.logout,

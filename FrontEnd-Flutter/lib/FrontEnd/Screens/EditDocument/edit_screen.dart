@@ -110,12 +110,15 @@ class _EditScreenState extends State<EditScreen> {
                         child: TextField(
                           controller: _documentnameController
                             ..text = widget.document.document_name,
-                          style: const TextStyle(color: kMainTextClr),
+                          style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: kMainTextClr),
                           cursorColor: kMainTextClr,
                           decoration: const InputDecoration(
-                              hintText: "INSERT YOUR DOCUMENT NAME",
+                              hintText: "Insert Your Document Name",
                               hintStyle: TextStyle(
-                                  fontSize: 11,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.w600,
                                   color: kSubTextIconClr),
                               enabledBorder: InputBorder.none,
@@ -148,7 +151,10 @@ class _EditScreenState extends State<EditScreen> {
                         child: TextField(
                           controller: _organizationnameController
                             ..text = widget.document.organization_name,
-                          style: const TextStyle(color: kMainTextClr),
+                          style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: kMainTextClr),
                           cursorColor: kMainTextClr,
                           decoration: const InputDecoration(
                               hintText: "INSERT ORGANIZATION NAME",
@@ -184,12 +190,13 @@ class _EditScreenState extends State<EditScreen> {
                             color: Color(0xffEAEAEA)),
                         alignment: Alignment.center,
                         child: TextField(
-                          style: const TextStyle(color: kMainTextClr),
+                          style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: kMainTextClr),
                           controller: dateinputController,
-                          decoration: InputDecoration(
-                              icon: const Icon(Icons.calendar_month),
-                              hintText: widget.document.date.toString(),
-                              hintStyle: const TextStyle(color: kMainTextClr),
+                          decoration: const InputDecoration(
+                              icon: Icon(Icons.calendar_month),
                               enabledBorder: InputBorder.none,
                               focusedBorder: InputBorder.none),
                           readOnly: true,

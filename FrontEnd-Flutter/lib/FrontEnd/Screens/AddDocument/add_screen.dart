@@ -161,11 +161,10 @@ class _AddScreenState extends State<AddScreen> {
                                 fontWeight: FontWeight.w500,
                                 color: kMainTextClr),
                             cursorColor: kMainTextClr,
-                            decoration: InputDecoration(
-                                hintText:
-                                    "insert document's name".toUpperCase(),
-                                hintStyle: const TextStyle(
-                                    fontSize: 11,
+                            decoration: const InputDecoration(
+                                hintText: "Insert Document's Name",
+                                hintStyle: TextStyle(
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: kSubTextIconClr),
                                 enabledBorder: InputBorder.none,
@@ -203,9 +202,9 @@ class _AddScreenState extends State<AddScreen> {
                                 color: kMainTextClr),
                             cursorColor: kMainTextClr,
                             decoration: const InputDecoration(
-                                hintText: "INSERT ORGANIZATION NAME",
+                                hintText: "Insert Organization Name",
                                 hintStyle: TextStyle(
-                                    fontSize: 11,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: kSubTextIconClr),
                                 enabledBorder: InputBorder.none,
@@ -243,9 +242,9 @@ class _AddScreenState extends State<AddScreen> {
                             controller: dateinputController,
                             decoration: const InputDecoration(
                                 icon: Icon(Icons.calendar_month),
-                                hintText: "CHOOSE DATE",
+                                hintText: "Choose Date",
                                 hintStyle: TextStyle(
-                                    fontSize: 11,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: kSubTextIconClr),
                                 enabledBorder: InputBorder.none,
@@ -363,9 +362,9 @@ class _AddScreenState extends State<AddScreen> {
                                 alignment: Alignment.center,
                                 child: DropdownButtonFormField(
                                   decoration: const InputDecoration(
-                                      hintText: "CHOOSE DOCUMENT'S CATEGORY",
+                                      hintText: "Choose Category",
                                       hintStyle: TextStyle(
-                                          fontSize: 11,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.w600,
                                           color: kSubTextIconClr),
                                       enabledBorder: InputBorder.none,

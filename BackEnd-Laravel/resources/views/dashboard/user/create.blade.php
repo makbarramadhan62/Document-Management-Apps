@@ -9,12 +9,26 @@
         <form method="post" action="/dashboard/users">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+                <label for="full_name" class="form-label">Full Name</label>
+                <input type="text" class="form-control @error('full_name') is-invalid @enderror" id="full_name"
+                    name="full_name">
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username"
+                    name="username">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="phone_number" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phone_number" name="phone_number">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
