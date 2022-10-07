@@ -62,14 +62,14 @@
             <div class="mb-3">
                 <label for="file_upload" class="form-label">File Upload</label>
                 <input type="text" class="form-control" id="file_upload" name="file_upload"
-                    value="{{ $document->file_upload }}">
+                    value="{{ $document->file_upload }}" disabled>
             </div>
             <div class="mb-3">
                 <label for="signature" class="form-label">Signature</label>
                 <input type="text" class="form-control" id="signature" name="signature"
                     value="{{ $document->signature }}">
             </div>
-            {{-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="user" class="form-label">Owner</label>
                 <select class="form-select" name="user_id">
                     @foreach ($users as $user)
@@ -80,7 +80,7 @@
                         @endif
                     @endforeach
                 </select>
-            </div> --}}
+            </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
