@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:kp_project/FrontEnd/Models/document.dart';
 
-const String url = 'http://192.168.1.12:8000/api/documents';
+const String url = 'http://192.168.1.8:8000/api/documents';
 
 class ServicesGetApi {
   static List<Document> parseDocuments(String responseBody) {

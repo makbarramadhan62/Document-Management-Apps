@@ -56,18 +56,6 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
             children: <Widget>[
               Center(
                 child: Container(
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 5,
-                        offset: Offset(0, 0),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(100),
-                    color: Colors.white,
-                  ),
                   child: const ClipOval(
                     child: Image(
                         width: 180,

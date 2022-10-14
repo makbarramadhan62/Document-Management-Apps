@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:kp_project/BackEnd/API/ApiConf.dart';
+import 'package:kp_project/FrontEnd/AppsInfo/AppsInfo_Screen.dart';
 import 'package:kp_project/FrontEnd/Models/document.dart';
 import 'package:kp_project/FrontEnd/Screens/AddDocument/add_screen.dart';
 import 'package:kp_project/FrontEnd/Screens/DetailDocument/detail_screen.dart';
@@ -141,10 +142,17 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(
-              Icons.notifications_outlined,
+              Icons.info_outline,
               size: 28,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AppsInfo(),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -191,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.only(left: 10, right: 10),
               child: Column(
                 children: [
                   const SizedBox(
@@ -237,40 +245,40 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                   ),
-                  const SizedBox(
-                    height: 10,
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 5, 5, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  const Text(
+                    "Recent Documents",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: kSubTextIconClr),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      const Text(
-                        "Recent Documents",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: kSubTextIconClr),
-                      ),
-                      IconButton(
-                        iconSize: 25,
-                        onPressed: () {
-                          setState(
-                            () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text("Page Refreshed!"),
-                                  duration: Duration(seconds: 1),
-                                ),
-                              );
-                            },
+                  IconButton(
+                    iconSize: 25,
+                    onPressed: () {
+                      setState(
+                        () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Page Refreshed!"),
+                              duration: Duration(seconds: 1),
+                            ),
                           );
                         },
-                        icon: const Icon(
-                          Icons.refresh_rounded,
-                          color: kSubTextIconClr,
-                        ),
-                        splashRadius: 25,
-                      ),
-                    ],
+                      );
+                    },
+                    icon: const Icon(
+                      Icons.refresh_rounded,
+                      color: kSubTextIconClr,
+                    ),
+                    splashRadius: 25,
                   ),
                 ],
               ),

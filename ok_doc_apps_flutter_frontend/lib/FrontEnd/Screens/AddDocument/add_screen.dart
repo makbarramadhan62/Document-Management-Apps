@@ -79,7 +79,7 @@ class _AddScreenState extends State<AddScreen> {
   List categoryItemList = [];
 
   Future getAllCategories() async {
-    var url = "http://192.168.1.12:8000/api/categories";
+    var url = "http://192.168.1.8:8000/api/categories";
     var response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {

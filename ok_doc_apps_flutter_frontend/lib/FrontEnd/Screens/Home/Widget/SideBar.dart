@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kp_project/FrontEnd/ComingSoon/ComingSoon_Screen.dart';
+import 'package:kp_project/FrontEnd/AppsInfo/AppsInfo_Screen.dart';
 import 'package:kp_project/FrontEnd/Screens/Home/home_screen.dart';
 import 'package:kp_project/FrontEnd/Screens/Login/login_screen.dart';
 import 'package:kp_project/FrontEnd/Screens/MyAccount/myAccount_screen.dart';
@@ -98,13 +98,13 @@ class _SideBarState extends State<SideBar> {
                   // ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Help',
-                    icon: Icons.help_outline,
+                    text: 'Apps Info',
+                    icon: Icons.info_outline,
                     onClicked: () {
                       Navigator.of(context).pop();
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => ComingSoon(),
+                          builder: (context) => AppsInfo(),
                         ),
                       );
                     },

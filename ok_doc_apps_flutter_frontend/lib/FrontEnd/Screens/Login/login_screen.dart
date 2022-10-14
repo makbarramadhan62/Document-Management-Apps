@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: kSubTextIconClr),
+                          color: kMainTextClr),
                       decoration: const InputDecoration(
                         icon: Icon(
                           Icons.person,
@@ -96,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: kSubTextIconClr),
+                          color: kMainTextClr),
                       obscureText: isHidden,
                       decoration: InputDecoration(
                           icon: const Icon(
