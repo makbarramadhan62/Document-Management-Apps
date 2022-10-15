@@ -28,21 +28,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'full_name' => 'Muhammad Akbar Ramadhan',
-            'username' => 'Akbar',
-            'email' => 'makbarramadhan62@gmail.com',
-            'title' => 'Anak Magang ITTS',
-            'phone_number' => '081349288331',
-            'password' => bcrypt('akbar')
-        ]);
-
-        User::create([
-            'full_name' => 'Wiranti Maharani',
-            'username' => 'Ranti',
-            'email' => 'wirantimaharani281000@gmail.com',
-            'title' => 'Anak Magang Telkom',
-            'phone_number' => '081349288833',
-            'password' => bcrypt('ranti')
+            'full_name' => 'Fujita Hisoka',
+            'username' => 'Hisoka',
+            'email' => 'hisoka@gmail.com',
+            'title' => 'Anak Magang',
+            'phone_number' => '081234567890',
+            'password' => bcrypt('hisoka')
         ]);
 
         Type::create([
@@ -102,7 +93,7 @@ class DatabaseSeeder extends Seeder
             'status_id' => '1',
             'file_upload' => 'file2.pdf',
             'signature' => '',
-            'user_id' => '2',
+            'user_id' => '1',
         ]);
 
         Document::create([
@@ -126,7 +117,7 @@ class DatabaseSeeder extends Seeder
             'status_id' => '1',
             'file_upload' => 'file2.pdf',
             'signature' => '',
-            'user_id' => '2',
+            'user_id' => '1',
         ]);
 
         Document::create([
@@ -150,7 +141,7 @@ class DatabaseSeeder extends Seeder
             'status_id' => '1',
             'file_upload' => 'file2.pdf',
             'signature' => '',
-            'user_id' => '2',
+            'user_id' => '1',
         ]);
 
         Document::create([
