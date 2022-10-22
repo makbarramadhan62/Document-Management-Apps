@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kp_project/FrontEnd/AppsInfo/AppsInfo_Screen.dart';
+import 'package:kp_project/FrontEnd/Screens/AppsInfo/AppsInfo_Screen.dart';
 import 'package:kp_project/FrontEnd/Screens/Home/home_screen.dart';
 import 'package:kp_project/FrontEnd/Screens/Login/login_screen.dart';
 import 'package:kp_project/FrontEnd/Screens/MyAccount/myAccount_screen.dart';
@@ -83,19 +83,6 @@ class _SideBarState extends State<SideBar> {
                       );
                     },
                   ),
-                  // const SizedBox(height: 16),
-                  // buildMenuItem(
-                  //   text: 'History',
-                  //   icon: Icons.history,
-                  //   onClicked: () {
-                  //     Navigator.of(context).pop();
-                  //     Navigator.of(context).push(
-                  //       MaterialPageRoute(
-                  //         builder: (context) => ComingSoon(),
-                  //       ),
-                  //     );
-                  //   },
-                  // ),
                   const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Apps Info',
@@ -114,19 +101,6 @@ class _SideBarState extends State<SideBar> {
                     thickness: 1,
                   ),
                   const SizedBox(height: 24),
-                  // buildMenuItem(
-                  //   text: 'Settings',
-                  //   icon: Icons.settings,
-                  //   onClicked: () {
-                  //     Navigator.of(context).pop();
-                  //     Navigator.of(context).push(
-                  //       MaterialPageRoute(
-                  //         builder: (context) => ComingSoon(),
-                  //       ),
-                  //     );
-                  //   },
-                  // ),
-                  // const SizedBox(height: 16),
                   buildMenuItem(
                     text: 'Logout',
                     icon: Icons.logout,

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:kp_project/BackEnd/API/ApiConf.dart';
-import 'package:kp_project/FrontEnd/AppsInfo/AppsInfo_Screen.dart';
+import 'package:kp_project/FrontEnd/Screens/AppsInfo/AppsInfo_Screen.dart';
 import 'package:kp_project/FrontEnd/Models/document.dart';
 import 'package:kp_project/FrontEnd/Screens/AddDocument/add_screen.dart';
 import 'package:kp_project/FrontEnd/Screens/DetailDocument/detail_screen.dart';

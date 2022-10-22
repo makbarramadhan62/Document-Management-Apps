@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future loginMethod(email, password, context) async {
   if (email.isNotEmpty && password.isNotEmpty) {
     var response = await http.post(
-      Uri.parse("http://192.168.1.8:8000/api/login"),
+      Uri.parse("http://10.0.2.2:8000/api/login"),
       body: ({"email": email, "password": password}),
     );
     if (response.statusCode == 200) {

@@ -28,12 +28,12 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'full_name' => 'Fujita Hisoka',
-            'username' => 'Hisoka',
-            'email' => 'hisoka@gmail.com',
-            'title' => 'Anak Magang',
+            'full_name' => 'Admin',
+            'username' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'title' => 'Admin',
             'phone_number' => '081234567890',
-            'password' => bcrypt('hisoka')
+            'password' => bcrypt('admin')
         ]);
 
         Type::create([
