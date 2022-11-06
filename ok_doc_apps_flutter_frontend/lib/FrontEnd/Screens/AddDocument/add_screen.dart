@@ -504,7 +504,7 @@ class _AddScreenState extends State<AddScreen> {
                                     SizedBox(
                                       child: Column(
                                         children: [
-                                          // Image.file(fileToDisplay!),
+                                          Image.file(fileToDisplay!),
                                           Container(
                                             alignment: Alignment.center,
                                             height: 100,
